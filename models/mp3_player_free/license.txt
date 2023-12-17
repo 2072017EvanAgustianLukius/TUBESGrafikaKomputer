@@ -1,0 +1,11 @@
+Model Information:
+* title:	MP3 Player Free
+* source:	https://sketchfab.com/3d-models/mp3-player-free-fc7b6840c68746aaa3cf5e0ae68f5d86
+* author:	Yorus01 (https://sketchfab.com/Yorus01)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "MP3 Player Free" (https://sketchfab.com/3d-models/mp3-player-free-fc7b6840c68746aaa3cf5e0ae68f5d86) by Yorus01 (https://sketchfab.com/Yorus01) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
