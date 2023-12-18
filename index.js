@@ -24,6 +24,16 @@ loader.load('scene.gltf', (gltf) => {
     console.log(laptop);
 });
 
+const loader1 = new GLTFLoader().setPath('../models/Kaos/GLTF/');
+loader1.load('ShirtLongSleeves.gltf', (gltf) => {
+    const Kaos = gltf.scene;
+    Kaos.position.set(0, 0, 20);
+    Kaos.scale.set(10, 10, 10);
+    scene.add(Kaos);
+    console.log(Kaos);
+})
+
+
 const light = new THREE.PointLight(0xffffff, 200, 100);
 light.position.set(0, 10, 0);
 scene.add(light);
