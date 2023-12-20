@@ -30,7 +30,7 @@ loader.load('scene.gltf', (gltf) => {
 });
 
 new RGBELoader()
-.load("../images/gear_store_2k.hdr", function(texture){
+.load("../images/studio_small_09_2k.hdr", function(texture){
     texture.mapping = THREE.EquirectangularReflectionMapping;
     scene.background = texture;
     scene.environment = texture;
