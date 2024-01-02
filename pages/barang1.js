@@ -4,7 +4,7 @@ import { GLTFLoader } from '../node_modules/three/examples/jsm/loaders/GLTFLoade
 import { RGBELoader } from '../node_modules/three/examples/jsm/loaders/RGBELoader.js';
 
 const scene = new THREE.Scene();
-const cam = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+const cam = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1);
 const renderer = new THREE.WebGLRenderer();
 // scene.background = new THREE.Color(0xffffffff);
 renderer.shadowMap.enabled = true;
@@ -14,7 +14,8 @@ renderer.toneMappingExposure = 0.6;
 renderer.outputEncoding = THREE.sRGBEncoding;
 
 renderer.setSize(window.innerWidth, window.innerHeight);
-cam.position.z = 5;
+cam.position.z = 10;
+cam.position.y = 5;
 document.body.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(cam, renderer.domElement);
@@ -49,12 +50,12 @@ new RGBELoader()
 const light = new THREE.PointLight(0xffffff, 200, 100);
 light.position.set(0, 7, 5);
 scene.add(light);
-scene.add(new THREE.PointLightHelper(light, 0.5, 0x00ff00));
+// scene.add(new THREE.PointLightHelper(light, 0.5, 0x00ff00));
 
 const light2 = new THREE.PointLight(0xffffff, 200, 100)
 light2.position.set(0, 7, -5);
 scene.add(light2);
-scene.add(new THREE.PointLightHelper(light2, 0.5, 0x00ff00));
+// scene.add(new THREE.PointLightHelper(light2, 0.5, 0x00ff00));
 
 function draw() {
     controls.update();
