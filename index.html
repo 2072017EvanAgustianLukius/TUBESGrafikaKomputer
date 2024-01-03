@@ -2,198 +2,160 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>E-commerce 3D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Homepage</title>
   <style>
     body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
     }
-  
+
     header {
-    display: flex;
-    align-items: center; /* Vertically align elements */
-    background-color: black;
-    /* NEW: Set a specific height for the header */
-    height: 80px; /* Adjust as needed */
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
     }
 
     nav {
-        display: flex; /* Make the nav a flex container */
-        justify-content: flex-end; /* Align items to the right */
-        float: right;
-        margin-top: 10px;
-        margin-bottom: 0;
+      display: flex;
+      align-items: center;
     }
-  h1 {
-    margin-bottom: 0px;
-    color: white;
-    margin-left: 20px;
-    font-size: 20px;
-  }
-  
-  .search-container {
-    display: flex;
-    align-items: center; /* Vertically align search elements */
-    margin-left: auto; /* Push to the right */
-  }
-  
-  .search-button {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .search-button:hover {
-    background-color: #ff0000;
-    color: #fff;
-  }
-  
-  .search-input {
-    width: 200px; /* Adjust width as needed */
-    margin-right: 10px;
-    margin-left: 40px;
-  }
-  
-  nav .a{
-    display: flex;
-    align-items: center; /* Align links and search vertically */
-  }
-  a {
-    margin-top: 0;
-    margin-bottom: 0;
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #fff;
-    transition: all 0.2s ease-in-out;
-    margin-left: 30px;
-  }
-  
-  a:hover {
-    background-color: #f58300;
-    color: #fff;
-  }
-  
-  nav {
-    float: right;
-    margin-top: 10px;
-  }
-  
-  main {
-    margin-top: 50px;
-  }
-  
-  section {
-    margin-bottom: 50px;
-  }
-  
-  h2 {
-    font-size: 16px;
-  }
-  
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  li {
-    padding: 10px;
-  }
-  
-  footer {
-    background-color: #ccc;
-    padding: 10px;
-  }
-  
-  p {
-    margin-bottom: 10px;
-  }
-  
-  .image-container {
-    margin-left: 90px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 100px;
-  }
-  
-  img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
-  }
-  .item {
-  text-align: center;
-  margin-bottom: 0px; /* Mengurangi jarak antara setiap item */
-}
 
-.item p {
-  margin-top: 5px;
-  font-size: 14px;
-  color: #666;
-}
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
 
+    .hero-banner {
+      background: #000;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
 
+    .hero-banner h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero-banner p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .featured-products {
+      margin: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center; 
+    }
+
+    .product-card {
+      width: 300px; 
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-card img {
+      width: 100%; 
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .product-details {
+      padding: 15px;
+    }
+
+    .product-details h3 {
+      margin: 0;
+      font-size: 18px; 
+      color: #333;
+    }
+
+    .product-details p {
+      margin: 10px 0; 
+      color: #666;
+      font-size: 14px;
+    }
+
+    .footer {
+      background-color: #333;
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-<header>
-  <h1>Toko Online 3D</h1>
-  <nav>
-    <form action="/search" method="get">
-      <input type="text" placeholder="Search..." class="search-input">
-      <button type="submit" class="search-button">Search</button>
-    </form>
-    <a href="#">Login</a>
-    <a href="#">Sign Up</a>
-  </nav>
-</header>
-<main>
-    <section class="items">
-      <div class="image-container">
-        <div class="item">
-          <a href="/pages/barang1.html">
-              <img src="images/mp3.png">
-              <p>Gambar yang bisa di klik</p>
-          </a>
-      </div>      
-        <div class="item">
-          <img src="images/2.png">
-          <p>Description for Image 2</p>
+  <header>
+    <h1>E-commerce Store</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero-banner">
+    <h2>Selamat Datang di Lukius Store</h2>
+    <p>Temukan tren terbaru dan temukan barang sempurnamu.</p>
+  </div>
+
+  <main>
+    <section class="featured-products">
+      <a href="/pages/barang1.html">
+        <div class="product-card">
+          <img src="images/mp3.png" alt="Product 1">
+          <div class="product-details">
+            <h3>MP3 player</h3>
+            <p>Perkenalkan MP3 player terbaru kami, sebuah perangkat canggih dan elegan yang dirancang untuk meningkatkan pengalaman mendengarkan musik Anda. Gadget yang ringkas dan ringan ini merupakan teman sempurna bagi para penggemar musik yang menginginkan portabilitas tanpa mengorbankan kualitas audio.</p>
+          </div>
         </div>
-        <div class="item">
-          <img src="images/3.png">
-          <p>Description for Image 3</p>
+      </a>
+
+      <a href="/pages/barang2.html">
+        <div class="product-card">
+          <img src="images/ps5.png" alt="Product 2">
+          <div class="product-details">
+            <h3>PS5 Console</h3>
+            <p>Kontroler PlayStation 5 (PS5) adalah inovasi terbaru dari Sony, menawarkan pengalaman gaming yang mendalam. Dengan desain ergonomis, kontroler DualSense menyajikan umpan balik haptik yang unik dan responsif, memperkaya sensasi permainan.</p>
+          </div>
         </div>
-        <div class="item">
-          <img src="images/4.png">
-          <p>Description for Image 4</p>
-        </div>
-        <div class="item">
-            <img src="/images/1.png">
-            <p>Description for Image 1</p>
-          </div>
-          <div class="item">
-            <img src="/images/2.png">
-            <p>Description for Image 2</p>
-          </div>
-          <div class="item">
-            <img src="/images/3.png">
-            <p>Description for Image 3</p>
-          </div>
-          <div class="item">
-            <img src="/images/4.png">
-            <p>Description for Image 4</p>
-          </div>
-      </div>
+      </a>
     </section>
   </main>
-  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 E-commerce Store. All rights reserved.</p>
+  </footer>
 </body>
 </html>
