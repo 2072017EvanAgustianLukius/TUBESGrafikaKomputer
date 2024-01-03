@@ -1,0 +1,11 @@
+Model Information:
+* title:	Gadget-Watch
+* source:	https://sketchfab.com/3d-models/gadget-watch-6547ecc4f59c469791133d9ab06f67c7
+* author:	MariaDvi (https://sketchfab.com/MariaDvi)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Gadget-Watch" (https://sketchfab.com/3d-models/gadget-watch-6547ecc4f59c469791133d9ab06f67c7) by MariaDvi (https://sketchfab.com/MariaDvi) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce 3D</title>
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+
+        .product-details {
+            flex-grow: 1;
+            display: flex;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-image {
+            width: 150px;
+            height: 150px;
+        }
+
+        .product-images {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .product-images img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product-description {
+            flex: 2;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="product-details">
+            <div class="product-images">
+                <img src="../images/watch1.png" alt="Product Image" class="product-image">
+            </div>
+            <div class="product-description">
+                <h2>Smart Watch</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.. </p>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <a href="/index.html">
+            <div class="sidebar-item">Kembali ke Home</div>
+            </a>
+            <div class="sidebar-item">Keranjang</div>
+        </div>
+    </div>
+    <script type="importmap">
+        {
+            "imports" : {
+                "three" : "../node_modules/three/build/three.module.js"
+            }
+        }
+    </script>
+    <script type="module" src="watch1.js">
+    </script>
+</body>
+</html>
