@@ -1,0 +1,11 @@
+Model Information:
+* title:	PlayStation 4
+* source:	https://sketchfab.com/3d-models/playstation-4-dacf322738c34c3cba14843218f31ec7
+* author:	HAWk_463 (https://sketchfab.com/mbon913)
+
+Model License:
+* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "PlayStation 4" (https://sketchfab.com/3d-models/playstation-4-dacf322738c34c3cba14843218f31ec7) by HAWk_463 (https://sketchfab.com/mbon913) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
