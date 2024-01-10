@@ -8,9 +8,9 @@
     <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
     <style>
         body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-    }
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
 
         .product-details {
             flex-grow: 1;
@@ -56,6 +56,30 @@
             margin-bottom: 10px;
         }
 
+        .color-change-container {
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .color-change-button {
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 100%;
+            display: inline-block;
+        }
+
+        .red { background-color: red; }
+        .blue { background-color: blue; }
+        .green { background-color: green; }
+
+        #colorPicker {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -78,6 +102,7 @@
             <div class="sidebar-item">Keranjang</div>
         </div>
     </div>
+    <input type="color" id="colorPicker" value="#ff0000">
     <script type="importmap">
         {
             "imports" : {
@@ -85,7 +110,6 @@
             }
         }
     </script>
-    <script type="module" src="ipod.js">
-    </script>
+    <script type="module" src="ipod.js"></script>
 </body>
 </html>

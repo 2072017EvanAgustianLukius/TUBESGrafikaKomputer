@@ -20,8 +20,10 @@ document.body.appendChild(renderer.domElement);
 const controls = new OrbitControls(cam, renderer.domElement);
 
 const loader = new GLTFLoader().setPath('../models/mp3_player_free/');
+let laptop;
+
 loader.load('scene.gltf', (gltf) => {
-    const laptop = gltf.scene;
+    laptop = gltf.scene;
     laptop.position.set(0, 0, 0);
     laptop.scale.set(1, 1, 1);
     laptop.rotation.x += 0.01;
@@ -29,22 +31,32 @@ loader.load('scene.gltf', (gltf) => {
     console.log(laptop);
 });
 
-new RGBELoader()
-.load("../images/studio_small_09_2k.hdr", function(texture){
-    texture.mapping = THREE.EquirectangularReflectionMapping;
-    scene.background = texture;
-    scene.environment = texture;
+const colorPicker = document.getElementById('colorPicker');
+colorPicker.addEventListener('input', (event) => {
+    if (laptop) {
+        const color = new THREE.Color(event.target.value);
+        laptop.traverse((child) => {
+            if (child.isMesh) {
+                child.material.color = color;
+            }
+        });
+    }
 });
+
+new RGBELoader()
+    .load("../images/studio_small_09_2k.hdr", function(texture){
+        texture.mapping = THREE.EquirectangularReflectionMapping;
+        scene.background = texture;
+        scene.environment = texture;
+    });
 
 const light = new THREE.PointLight(0xffffff, 200, 100);
 light.position.set(0, 7, 5);
 scene.add(light);
-// scene.add(new THREE.PointLightHelper(light, 0.5, 0x00ff00));
 
-const light2 = new THREE.PointLight(0xffffff, 200, 100)
+const light2 = new THREE.PointLight(0xffffff, 200, 100);
 light2.position.set(0, 7, -5);
 scene.add(light2);
-// scene.add(new THREE.PointLightHelper(light2, 0.5, 0x00ff00));
 
 function draw() {
     controls.update();
