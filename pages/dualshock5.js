@@ -30,6 +30,18 @@ loader.load('scene.gltf', (gltf) => {
     console.log(consolps);
 });
 
+const colorPicker = document.getElementById('colorPicker');
+colorPicker.addEventListener('input', (event) => {
+    if (consolps) {
+        const color = new THREE.Color(event.target.value);
+        consolps.traverse((child) => {
+            if (child.isMesh) {
+                child.material.color = color;
+            }
+        });
+    }
+});
+
 new RGBELoader()
 .load("../images/studio_small_09_2k.hdr", function(texture){
     texture.mapping = THREE.EquirectangularReflectionMapping;
