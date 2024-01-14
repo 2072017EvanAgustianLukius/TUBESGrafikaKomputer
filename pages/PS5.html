@@ -56,6 +56,28 @@
             margin-bottom: 10px;
         }
 
+        .red { background-color: red; }
+        .blue { background-color: blue; }
+        .green { background-color: green; }
+        .yellow {background-color: yellow;}
+        .purple {background-color: purple;}
+
+        #colorPicker {
+            margin-top: 10px;
+        }
+        .color-change-container {
+            display: flex;
+        }
+
+        .color-picker-button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 5px;
+            cursor: pointer;
+            border: 2px solid #fff;
+        }
+
     </style>
 </head>
 <body>
@@ -78,6 +100,13 @@
             <div class="sidebar-item">Keranjang</div>
         </div>
     </div>
+    <div class="color-change-container">
+        <div id="colorPicker" class="color-picker-button red" data-color="#ff0000" onclick="changeColor('#ff0000')"></div>
+        <div id="colorPicker" class="color-picker-button blue" data-color="#0000ff" onclick="changeColor('#0000ff')"></div>
+        <div id="colorPicker" class="color-picker-button green" data-color="#00ff00" onclick="changeColor('#00ff00')"></div>
+        <div id="colorPicker" class="color-picker-button yellow" data-color="#ffff00" onclick="changeColor('#ffff00')"></div>
+        <div id="colorPicker" class="color-picker-button purple" data-color="#800080" onclick="changeColor('#800080')"></div>
+    </div>    
     <script type="importmap">
         {
             "imports" : {
