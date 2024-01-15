@@ -31,6 +31,12 @@ loader.load('scene.gltf', (gltf) => {
     console.log(consolps);
 });
 
+// new RGBELoader()
+// .load("../images/studio_small_09_2k.hdr", function(texture){
+//     texture.mapping = THREE.EquirectangularReflectionMapping;
+//     scene.background = texture;
+//     scene.environment = texture;
+// });
 
 
 const light = new THREE.PointLight(0xffffff, 200, 100);
