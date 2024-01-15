@@ -6,7 +6,7 @@ import { RGBELoader } from '../node_modules/three/examples/jsm/loaders/RGBELoade
 const scene = new THREE.Scene();
 const cam = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1);
 const renderer = new THREE.WebGLRenderer();
-// scene.background = new THREE.Color(0xffffffff);
+scene.background = new THREE.Color(0xffffffff);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.BasicShadowMap;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -20,23 +20,37 @@ cam.position.z = 0.5;
 document.body.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(cam, renderer.domElement);
+let consolps;
 
 const loader = new GLTFLoader().setPath('../models/nokia_e72/');
 loader.load('scene.gltf', (gltf) => {
-    const consolps = gltf.scene;
+    consolps = gltf.scene;
     consolps.position.set(0, 0, 0);
     consolps.scale.set(1, 1, 1);
     consolps.rotation.x += 0.01;
     scene.add(consolps);
     console.log(consolps);
 });
+const colorPickerButtons = document.querySelectorAll('.color-picker-button');
 
-new RGBELoader()
-.load("../images/studio_small_09_2k.hdr", function(texture){
-    texture.mapping = THREE.EquirectangularReflectionMapping;
-    scene.background = texture;
-    scene.environment = texture;
+colorPickerButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        if (consolps) {
+            const color = new THREE.Color(button.dataset.color);
+            consolps.traverse((child) => {
+                if (child.isMesh) {
+                    child.material.color = color;
+                }
+            });
+        }
+    });
 });
+// new RGBELoader()
+// .load("../images/studio_small_09_2k.hdr", function(texture){
+//     texture.mapping = THREE.EquirectangularReflectionMapping;
+//     scene.background = texture;
+//     scene.environment = texture;
+// });
 
 
 const light = new THREE.PointLight(0xffffff, 200, 100);
