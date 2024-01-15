@@ -1,8 +1,9 @@
 import * as THREE from 'three';
-import { OrbitControls } from '../node_modules/three/examples/jsm/controls/OrbitControls.js';
-import { GLTFLoader } from '../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
-import { RGBELoader } from '../node_modules/three/examples/jsm/loaders/RGBELoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
 
+const loadingScreen = document.getElementById('loading-screen');
 const scene = new THREE.Scene();
 const cam = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1);
 const renderer = new THREE.WebGLRenderer();
@@ -14,8 +15,8 @@ renderer.toneMappingExposure = 0.6;
 renderer.outputEncoding = THREE.sRGBEncoding;
 
 renderer.setSize(window.innerWidth, window.innerHeight);
-cam.position.x =2;
-cam.position.y =2;
+cam.position.x = 2;
+cam.position.y = 2;
 document.body.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(cam, renderer.domElement);
@@ -23,12 +24,19 @@ const controls = new OrbitControls(cam, renderer.domElement);
 const loader = new GLTFLoader().setPath('../models/PS5/');
 let consolps5;
 
+// Show loading screen
+loadingScreen.style.display = 'block';
+
 loader.load('scene.gltf', (gltf) => {
     consolps5 = gltf.scene;
     consolps5.position.set(0, 0, 0);
     consolps5.scale.set(1, 1, 1);
     consolps5.rotation.x += 0;
     scene.add(consolps5);
+
+    // Hide loading screen when model is loaded
+    loadingScreen.style.display = 'none';
+
     console.log(consolps5);
 });
 
