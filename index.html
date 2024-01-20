@@ -5,113 +5,175 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>E-commerce Homepage</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f8f8;
-      color: #333;
-    }
+   body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #333;
+}
 
-    header {
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 24px;
-      color: #333;
-    }
+h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
 
-    nav {
-      display: flex;
-      align-items: center;
-    }
+nav {
+  display: flex;
+  align-items: center;
+}
 
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
 
-    .hero-banner {
-      background: #000;
-      height: 300px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      text-align: center;
-    }
+.hero-banner {
+  background: #000;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
 
-    .hero-banner h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+.hero-banner h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
 
-    .hero-banner p {
-      font-size: 18px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+.hero-banner p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-    .featured-products {
-      margin: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center; 
-    }
+.main-container {
+  margin: 20px;
+}
 
-    .product-card {
-      width: 300px; 
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: box-shadow 0.3s ease-in-out;
-    }
+.featured-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
 
-    .product-card:hover {
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
+.product-card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out;
+}
 
-    .product-card img {
-      width: 100%; 
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px 8px 0 0;
-    }
+.product-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
-    .product-details {
-      padding: 15px;
-    }
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
 
-    .product-details h3 {
-      margin: 0;
-      font-size: 18px; 
-      color: #333;
-    }
+.product-details {
+  padding: 15px;
+}
 
-    .product-details p {
-      margin: 10px 0; 
-      color: #666;
-      font-size: 14px;
-    }
+.product-details h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
 
-    .footer {
-      background-color: #333;
-      padding: 20px;
-      color: #fff;
-      text-align: center;
-    }
+.product-details h3 i {
+  font-style: normal;
+}
+
+.product-details p {
+  margin: 10px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 80%; /* Menentukan lebar maksimum popup */
+}
+
+.popup-content {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+#popup-image {
+  width: 100%;
+  max-height: 400px; /* Menentukan tinggi maksimum gambar */
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain; /* Menyesuaikan gambar tanpa memotong atau merubah aspek ratio */
+}
+
+#popup-details {
+  text-align: center;
+}
+
+#popup-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#popup-price {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#popup-view-btn {
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
   </style>
 </head>
 <body>
@@ -128,21 +190,30 @@
     <h2>Selamat Datang di Lukius Store</h2>
     <p>Temukan tren terbaru dan temukan barang sempurnamu.</p>
   </div>
-
+  <div id="product-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <img id="popup-image" src="" alt="Product Image">
+      <div id="popup-details" class="product-details">
+        <h3 id="popup-title"></h3>
+        <h3 id="popup-price"></h3>
+        <button id="popup-view-btn">Lihat Detail</button>
+      </div>
+    </div>
+  </div>
   <main>
     <section class="featured-products">
-      <a href="/pages/ipod.html">
+      <a href="#" onclick="openPopup('MP3 player', 'Rp 300.000', 'images/mp3.png', '/pages/ipod.html')">
         <div class="product-card">
           <img src="images/mp3.png" alt="Product 1">
           <div class="product-details">
             <h3>MP3 player</h3>
             <h3><i>Rp 300.000</i></h3>
-        
           </div>
         </div>
       </a>
 
-      <a href="/pages/dualshock5.html">
+      <a href="#" onclick="openPopup('PS5 Controller', 'Rp 1.200.000', 'images/ps5.png', '/pages/dualshock5.html')">
         <div class="product-card">
           <img src="images/ps5.png" alt="Product 2">
           <div class="product-details">
@@ -152,7 +223,8 @@
         </div>
       </a>
 
-      <a href="/pages/dualshock4.html">
+
+      <a href="#" onclick="openPopup('PS4 Controller', 'Rp 900.000', 'images/ps4_controller.jpg', '/pages/dualshock4.html')">
         <div class="product-card">
           <img src="images/ps4_controller.jpg" alt="Product 2">
           <div class="product-details">
@@ -162,7 +234,8 @@
         </div>
       </a>
 
-      <a href="/pages/poco_x3_nfc.html">
+      
+        <a href="#" onclick="openPopup('POCO X3', 'Rp 2.200.000', 'images/poco x3.png', '/pages/poco_x3_nfc.html')">
         <div class="product-card">
           <img src="images/poco x3.png" alt="Product 3">
           <div class="product-details">
@@ -354,9 +427,27 @@
 
     </section>
   </main>
-
   <footer class="footer">
     <p>&copy; 2024 E-commerce Store. All rights reserved.</p>
   </footer>
+
+  <script>
+    function openPopup(title, price, imageSrc, viewLink) {
+      document.getElementById('popup-title').innerText = title;
+      document.getElementById('popup-price').innerText = price;
+      document.getElementById('popup-image').src = imageSrc;
+
+      // Atur tautan pada tombol "Lihat Detail"
+      document.getElementById('popup-view-btn').onclick = function() {
+        window.location.href = viewLink;
+      };
+
+      document.getElementById('product-popup').style.display = 'block';
+    }
+
+    function closePopup() {
+      document.getElementById('product-popup').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
