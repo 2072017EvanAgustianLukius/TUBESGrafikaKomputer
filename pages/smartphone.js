@@ -31,17 +31,24 @@ loader.load('scene.gltf', (gltf) => {
     console.log(consolps);
 });
 
-new RGBELoader()
-.load("../images/studio_small_09_2k.hdr", function(texture){
-    texture.mapping = THREE.EquirectangularReflectionMapping;
-    scene.background = texture;
-    scene.environment = texture;
-});
+// new RGBELoader()
+// .load("../images/studio_small_09_2k.hdr", function(texture){
+//     texture.mapping = THREE.EquirectangularReflectionMapping;
+//     scene.background = texture;
+//     scene.environment = texture;
+// });
+const ambientLight = new THREE.AmbientLight(0x404040); // Warna ambient light
+scene.add(ambientLight);
 
-
-const light = new THREE.PointLight(0xffffff, 200, 100);
-light.position.set(0, 7, 5);
+const light = new THREE.PointLight(0xffffff, 1, 1000); // Warna light, Intensitas, Jarak
+light.position.set(50, 50, 50); // Ubah posisi light
 scene.add(light);
+const hemiLight = new THREE.HemisphereLight(0xffffff, 0x080820, 7);
+scene.add(hemiLight);
+
+// const light = new THREE.PointLight(0xffffff, 200, 100);
+// light.position.set(0, 7, 5);
+// scene.add(light);
 // scene.add(new THREE.PointLightHelper(light, 0.5, 0x00ff00));
 
 const light2 = new THREE.PointLight(0xffffff, 200, 100)

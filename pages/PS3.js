@@ -37,6 +37,8 @@ loader.load('scene.gltf', (gltf) => {
 //     scene.background = texture;
 //     scene.environment = texture;
 // });
+const hemiLight = new THREE.HemisphereLight(0xffffff, 0x080820, 5);
+scene.add(hemiLight);
 
 
 const light = new THREE.PointLight(0xffffff, 200, 100);

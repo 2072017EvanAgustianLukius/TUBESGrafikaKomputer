@@ -31,17 +31,19 @@ loader.load('scene.gltf', (gltf) => {
     console.log(consolps);
 });
 
-new RGBELoader()
-.load("../images/studio_small_09_2k.hdr", function(texture){
-    texture.mapping = THREE.EquirectangularReflectionMapping;
-    scene.background = texture;
-    scene.environment = texture;
-});
+// new RGBELoader()
+// .load("../images/studio_small_09_2k.hdr", function(texture){
+//     texture.mapping = THREE.EquirectangularReflectionMapping;
+//     scene.background = texture;
+//     scene.environment = texture;
+// });
+const hemiLight = new THREE.HemisphereLight(0xffffff, 0x080820, 5);
+scene.add(hemiLight);
 
 
-const light = new THREE.PointLight(0xffffff, 200, 100);
-light.position.set(0, 7, 5);
-scene.add(light);
+// const light = new THREE.PointLight(0xffffff, 200, 100);
+// light.position.set(0, 7, 5);
+// scene.add(light);
 // scene.add(new THREE.PointLightHelper(light, 0.5, 0x00ff00));
 
 const light2 = new THREE.PointLight(0xffffff, 200, 100)
