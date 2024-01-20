@@ -23,6 +23,8 @@ const controls = new OrbitControls(cam, renderer.domElement);
 const loader = new GLTFLoader().setPath('../models/mp3_player_free/');
 let laptop;
 
+const loadingOverlay = document.getElementById('loading-overlay');
+
 loader.load('scene.gltf', (gltf) => {
     laptop = gltf.scene;
     laptop.position.set(0, 0, 0);
@@ -30,6 +32,9 @@ loader.load('scene.gltf', (gltf) => {
     laptop.rotation.x += 0.01;
     scene.add(laptop);
     console.log(laptop);
+
+    // Sembunyikan animasi loading setelah objek 3D selesai dimuat
+    loadingOverlay.style.display = 'none';
 });
 
 const colorPickerButtons = document.querySelectorAll('.color-picker-button');

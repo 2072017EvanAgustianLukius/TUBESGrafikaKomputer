@@ -23,14 +23,35 @@ const controls = new OrbitControls(cam, renderer.domElement);
 const loader = new GLTFLoader().setPath('../models/dualsense/');
 let dualps5;
 
+// loader.load('scene.gltf', (gltf) => {
+//     dualps5 = gltf.scene;
+//     dualps5.position.set(0, 4, 0);
+//     dualps5.scale.set(1, 1, 1);
+//     dualps5.rotation.x += 1;
+//     scene.add(dualps5);
+//     console.log(dualps5);
+// });
+
+// ... (bagian JS sebelumnya tetap sama)
+
+// Tambahkan kode untuk menangani animasi loading
+const loadingOverlay = document.getElementById('loading-overlay');
+
 loader.load('scene.gltf', (gltf) => {
     dualps5 = gltf.scene;
     dualps5.position.set(0, 4, 0);
     dualps5.scale.set(1, 1, 1);
-    dualps5.rotation.x += 1;
+    dualps5.rotation.x += 0.01;
     scene.add(dualps5);
     console.log(dualps5);
+
+    // Sembunyikan animasi loading setelah objek 3D selesai dimuat
+    loadingOverlay.style.display = 'none';
 });
+
+// ... (bagian JS selanjutnya tetap sama)
+
+
 
 const colorPickerButtons = document.querySelectorAll('.color-picker-button');
 

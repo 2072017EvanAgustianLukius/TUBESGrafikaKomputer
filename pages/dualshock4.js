@@ -23,14 +23,33 @@ const controls = new OrbitControls(cam, renderer.domElement);
 const loader = new GLTFLoader().setPath('../models/dualshock4/');
 let dualps4;
 
+// loader.load('scene.gltf', (gltf) => {
+//     dualps4 = gltf.scene;
+//     dualps4.position.set(0, 4, 0);
+//     dualps4.scale.set(10, 10, 10);
+//     dualps4.rotation.x += 1;
+//     scene.add(dualps4);
+//     console.log(dualps4);
+// });
+// ... (bagian JS sebelumnya tetap sama)
+
+// Tambahkan kode untuk menangani animasi loading
+const loadingOverlay = document.getElementById('loading-overlay');
+
 loader.load('scene.gltf', (gltf) => {
     dualps4 = gltf.scene;
     dualps4.position.set(0, 4, 0);
     dualps4.scale.set(10, 10, 10);
-    dualps4.rotation.x += 1;
+    dualps4.rotation.x += 0.01;
     scene.add(dualps4);
     console.log(dualps4);
+
+    // Sembunyikan animasi loading setelah objek 3D selesai dimuat
+    loadingOverlay.style.display = 'none';
 });
+
+// ... (bagian JS selanjutnya tetap sama)
+
 
 const colorPickerButtons = document.querySelectorAll('.color-picker-button');
 
