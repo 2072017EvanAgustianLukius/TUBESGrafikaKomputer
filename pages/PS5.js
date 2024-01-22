@@ -1,7 +1,7 @@
 import * as THREE from 'three';
-import { OrbitControls } from '../node_modules/three/examples/jsm/controls/OrbitControls.js';
-import { GLTFLoader } from '../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
-import { RGBELoader } from '../node_modules/three/examples/jsm/loaders/RGBELoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
 
 const scene = new THREE.Scene();
 const cam = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1);
@@ -14,11 +14,15 @@ renderer.toneMappingExposure = 0.6;
 renderer.outputEncoding = THREE.sRGBEncoding;
 
 renderer.setSize(window.innerWidth, window.innerHeight);
-cam.position.x =2;
-cam.position.y =2;
+cam.position.x = 2;
+cam.position.y = 2;
 document.body.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(cam, renderer.domElement);
+controls.minDistance = 0.1;
+controls.maxDistance = 0.3;
+controls.minPolarAngle = 0; // Minimum polar angle in radians (0 is straight up)
+controls.maxPolarAngle = Math.PI / 2; // Maximum polar angle in radians (90 degrees)
 
 const loader = new GLTFLoader().setPath('../models/PS5/');
 let consolps5;
