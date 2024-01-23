@@ -17,8 +17,8 @@ cam.position.y = 2;
 document.body.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(cam, renderer.domElement);
-controls.minDistance = 20;  // Set minimum zoom distance
-controls.maxDistance = 20;  // Set maximum zoom distance
+controls.minDistance = 20; 
+controls.maxDistance = 20;  
 controls.minPolarAngle = 0;
 controls.maxPolarAngle = Math.PI / 2;
 
@@ -57,8 +57,22 @@ const light2 = new THREE.PointLight(0xffffff, 200, 100);
 light2.position.set(0, 7, -5);
 scene.add(light2);
 
+
 function draw() {
     controls.update();
+
+    const distance = cam.position.distanceTo(controls.target);
+    const maxZoomInDistance = 5;
+    const maxZoomOutDistance = 20;
+
+    if (distance < maxZoomInDistance) {
+        controls.maxDistance = distance - 0.1;
+    } else if (distance > maxZoomOutDistance) {
+        controls.maxDistance = maxZoomOutDistance;
+    } else {
+        controls.maxDistance = distance;
+    }
+
     renderer.render(scene, cam);
     requestAnimationFrame(draw);
 }
