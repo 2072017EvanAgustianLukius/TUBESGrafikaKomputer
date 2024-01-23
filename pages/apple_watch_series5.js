@@ -22,6 +22,10 @@ document.body.appendChild(renderer.domElement);
 const controls = new OrbitControls(cam, renderer.domElement);
 let consolps
 const loader = new GLTFLoader().setPath('../models/apple_watch_series5/');
+
+
+const loadingOverlay = document.getElementById('loading-overlay');
+
 loader.load('scene.gltf', (gltf) => {
     consolps = gltf.scene;
     consolps.position.set(0, 0, 0);
@@ -29,8 +33,10 @@ loader.load('scene.gltf', (gltf) => {
     consolps.rotation.x += 0.01;
     scene.add(consolps);
     console.log(consolps);
-});
 
+    // Sembunyikan animasi loading setelah objek 3D selesai dimuat
+    loadingOverlay.style.display = 'none';
+});
 // new RGBELoader()
 // .load("../images/studio_small_09_2k.hdr", function(texture){
 //     texture.mapping = THREE.EquirectangularReflectionMapping;
