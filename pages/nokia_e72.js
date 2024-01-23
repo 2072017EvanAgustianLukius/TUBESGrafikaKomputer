@@ -23,6 +23,9 @@ const controls = new OrbitControls(cam, renderer.domElement);
 let consolps;
 
 const loader = new GLTFLoader().setPath('../models/nokia_e72/');
+
+const loadingOverlay = document.getElementById('loading-overlay');
+
 loader.load('scene.gltf', (gltf) => {
     consolps = gltf.scene;
     consolps.position.set(0, 0, 0);
@@ -30,7 +33,19 @@ loader.load('scene.gltf', (gltf) => {
     consolps.rotation.x += 0.01;
     scene.add(consolps);
     console.log(consolps);
+
+    // Sembunyikan animasi loading setelah objek 3D selesai dimuat
+    loadingOverlay.style.display = 'none';
 });
+
+// loader.load('scene.gltf', (gltf) => {
+//     consolps = gltf.scene;
+//     consolps.position.set(0, 0, 0);
+//     consolps.scale.set(1, 1, 1);
+//     consolps.rotation.x += 0.01;
+//     scene.add(consolps);
+//     console.log(consolps);
+// });
 const colorPickerButtons = document.querySelectorAll('.color-picker-button');
 
 colorPickerButtons.forEach((button) => {
