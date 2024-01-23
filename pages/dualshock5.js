@@ -42,14 +42,22 @@ loader.load('scene.gltf', (gltf) => {
     dualps5.position.set(0, 4, 0);
     dualps5.scale.set(1, 1, 1);
     dualps5.rotation.x += 0.01;
+
+    // Menambahkan Ambient Light untuk pencahayaan
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    // Menambahkan Directional Light untuk pencahayaan dari arah bawah
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 5);
+    directionalLight.position.set(0, -1, 0); // Arah cahaya dari bawah
+    scene.add(directionalLight);
+
     scene.add(dualps5);
     console.log(dualps5);
 
     // Sembunyikan animasi loading setelah objek 3D selesai dimuat
     loadingOverlay.style.display = 'none';
 });
-
-// ... (bagian JS selanjutnya tetap sama)
 
 
 
