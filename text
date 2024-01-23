@@ -1,0 +1,216 @@
+
+    <section class="featured-products">
+      <a href="#" onclick="openPopup('MP3 player', 'Rp 300.000', 'images/mp3.png', '/pages/ipod.html')">
+        <div class="product-card">
+          <img src="images/mp3.png" alt="Product 1">
+          <div class="product-details">
+            <h3>MP3 player</h3>
+            <h3><i>Rp 300.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('PS5 Controller', 'Rp 1.200.000', 'images/ps5.png', '/pages/dualshock5.html')">
+        <div class="product-card">
+          <img src="images/ps5.png" alt="Product 2">
+          <div class="product-details">
+            <h3>PS5 Controller</h3>
+            <h3><i>Rp 1.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+
+      <a href="#" onclick="openPopup('PS4 Controller', 'Rp 900.000', 'images/ps4_controller.jpg', '/pages/dualshock4.html')">
+        <div class="product-card">
+          <img src="images/ps4_controller.jpg" alt="Product 2">
+          <div class="product-details">
+            <h3>PS4 Controller</h3>
+            <h3><i>Rp 900.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      
+        <a href="#" onclick="openPopup('POCO X3', 'Rp 2.200.000', 'images/poco x3.png', '/pages/poco_x3_nfc.html')">
+        <div class="product-card">
+          <img src="images/poco x3.png" alt="Product 3">
+          <div class="product-details">
+            <h3>POCO X3</h3>
+            <h3><i>Rp 2.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('Smartphone', 'Rp 1.200.000', 'images/smartphone.png', '/pages/smartphone.html')">
+        <div class="product-card">
+          <img src="images/smartphone.png" alt="Product 4">
+          <div class="product-details">
+            <h3>Smartphone</h3>
+            <h3><i>Rp 1.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('Retro Mobile Retro Phone', 'Rp 1.200.000', 'images/retrophone.jpg', '/pages/retro_phone.html')">
+        <div class="product-card">
+          <img src="images/retrophone.jpg" alt="Product 5">
+          <div class="product-details">
+            <h3>Retro Mobile Retro Phone</h3>
+            <h3><i>Rp 1.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('Nokia E72', 'Rp 800.000', 'images/nokia-e72.jpg', '/pages/nokia_e72.html')">
+        <div class="product-card">
+          <img src="images/nokia-e72.jpg" alt="Product 6">
+          <div class="product-details">
+            <h3>Nokia E72</h3>
+            <h3><i>Rp 800.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('Smart Watch', 'Rp 1.200.000', 'images/watch1.png', '/pages/watch1.html')">
+        <div class="product-card">
+          <img src="images/watch1.png" alt="Product 7">
+          <div class="product-details">
+            <h3>Smart Watch</h3>
+            <h3><i>Rp 1.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('Apple Watch Series 7', 'Rp 8.200.000', 'images/applewatchseries7.png', '/pages/apple_watch_series7.html')">
+        <div class="product-card">
+          <img src="images/applewatchseries7.png" alt="Product 8">
+          <div class="product-details">
+            <h3>Apple Watch Series 7</h3>
+            <h3><i>Rp 8.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('Apple Watch Series 5', 'Rp 3.200.000', 'images/applewatchseries5.jpg', '/pages/apple_watch_series5html')">
+        <div class="product-card">
+          <img src="images/applewatchseries5.jpg" alt="Product 9">
+          <div class="product-details">
+            <h3>Apple Watch Series 5</h3>
+            <h3><i>Rp 3.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('Apple Watch Ultra', 'Rp 8.200.000', 'images/applewatchultrajpg', '/pages/apple_watch_ultra.html')">
+      <a href="/pages/apple_watch_ultra.html">
+        <div class="product-card">
+          <img src="images/applewatchultra.jpg" alt="Product 10">
+          <div class="product-details">
+            <h3>Apple Watch Ultra</h3>
+            <h3><i>Rp 8.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('Smart Watch KW 19', 'Rp 1.200.000', 'images/smartwatch_kw19.jpg', '/pages/smartwatch_kw19.html')">
+        <div class="product-card">
+          <img src="images/smartwatch_kw19.jpg" alt="Product 11">
+          <div class="product-details">
+            <h3>Smart Watch KW 19</h3>
+            <h3><i>Rp 1.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('Sony PlaySation 5', 'Rp 8.200.000', 'images/console_ps5.jpg', '/pages/PS5.html')">
+        <div class="product-card">
+          <img src="images/console_ps5.jpg" alt="Product 13">
+          <div class="product-details">
+            <h3>Sony PlaySation 5</h3>
+            <h3><i>Rp 8.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('Sony PlaySation 4', 'Rp 4.200.000', 'images/console_ps4.jpg', '/pages/PS4.html')">
+        <div class="product-card">
+          <img src="images/console_ps4.jpg" alt="Product 14">
+          <div class="product-details">
+            <h3>Sony PlaySation 4</h3>
+            <h3><i>Rp 4.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('Sony PlaySation 3', 'Rp 2.200.000', 'images/console_ps3.jpg', '/pages/PS3.html')">
+        <div class="product-card">
+          <img src="images/console_ps3.jpg" alt="Product 15">
+          <div class="product-details">
+            <h3>Sony PlaySation 3</h3>
+            <h3><i>Rp 2.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('Sony PlaySation 2', 'Rp 800.000', 'images/console_ps2.png', '/pages/PS2.html')">
+        <div class="product-card">
+          <img src="images/console_ps2.png" alt="Product 16">
+          <div class="product-details">
+            <h3>Sony PlaySation 2</h3>
+            <h3><i>Rp 800.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('Sony PlaySation 1', 'Rp 400.000', 'images/console_ps1.jpg', '/pages/PS1.html')">
+        <div class="product-card">
+          <img src="images/console_ps1.jpg" alt="Product 17">
+          <div class="product-details">
+            <h3>Sony PlaySation 1</h3>
+            <h3><i>Rp 400.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('iPhone 12', 'Rp 8.200.000', 'images/iphone12.jpg', '/pages/iphone12_teardown.html')">
+        <div class="product-card">
+          <img src="images/iphone12.jpg" alt="Product 18">
+          <div class="product-details">
+            <h3>iPhone 12</h3>
+            <h3><i>Rp 8.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('iPhone 13', 'Rp 8.200.000', 'images/iphone13.jpg', '/pages/iphone13pro.html')">
+        <div class="product-card">
+          <img src="images/iphone13.jpg" alt="Product 19">
+          <div class="product-details">
+            <h3>iPhone 13</h3>
+            <h3><i>Rp 8.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('iPhone 7', 'Rp 8.200.000', 'images/iphone7jpg', '/pages/iphone7.html')">
+        <div class="product-card">
+          <img src="images/iphone7.jpg" alt="Product 20">
+          <div class="product-details">
+            <h3>iPhone 7</h3>
+            <h3><i>Rp 8.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" onclick="openPopup('iPhone 14', 'Rp 8.200.000', 'images/iphone14.png', '/pages/iphone14.html')">
+        <div class="product-card">
+          <img src="images/iphone14.png" alt="Product 21">
+          <div class="product-details">
+            <h3>iPhone 14</h3>
+            <h3><i>Rp 8.200.000</i></h3>
+          </div>
+        </div>
+      </a>
+
+    </section>

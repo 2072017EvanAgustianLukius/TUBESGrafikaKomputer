@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
 const scene = new THREE.Scene();
 const cam = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1);
 const renderer = new THREE.WebGLRenderer();
@@ -17,13 +18,11 @@ cam.position.y = 2;
 document.body.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(cam, renderer.domElement);
-controls.minDistance = 20; 
-controls.maxDistance = 20;  
-controls.minPolarAngle = 0;
+controls.minDistance = 20; // Minimum distance for zoom
 controls.maxPolarAngle = Math.PI / 2;
 
-const loader = new GLTFLoader().setPath('../models/PS5/');
 let consolps5;
+const loader = new GLTFLoader().setPath('../models/PS5/');
 
 loader.load('scene.gltf', (gltf) => {
     consolps5 = gltf.scene;
@@ -31,6 +30,12 @@ loader.load('scene.gltf', (gltf) => {
     consolps5.scale.set(1, 1, 1);
     consolps5.rotation.x += 0;
     scene.add(consolps5);
+
+    // Set initial maxDistance based on the bounding box of the loaded model
+    const boundingBox = new THREE.Box3().setFromObject(consolps5);
+    const modelSize = boundingBox.getSize(new THREE.Vector3()).length();
+    controls.maxDistance = modelSize * 2; // Adjust the multiplier as needed
+
     console.log(consolps5);
 });
 
@@ -57,22 +62,8 @@ const light2 = new THREE.PointLight(0xffffff, 200, 100);
 light2.position.set(0, 7, -5);
 scene.add(light2);
 
-
 function draw() {
     controls.update();
-
-    const distance = cam.position.distanceTo(controls.target);
-    const maxZoomInDistance = 5;
-    const maxZoomOutDistance = 20;
-
-    if (distance < maxZoomInDistance) {
-        controls.maxDistance = distance - 0.1;
-    } else if (distance > maxZoomOutDistance) {
-        controls.maxDistance = maxZoomOutDistance;
-    } else {
-        controls.maxDistance = distance;
-    }
-
     renderer.render(scene, cam);
     requestAnimationFrame(draw);
 }
