@@ -23,13 +23,18 @@ const controls = new OrbitControls(cam, renderer.domElement);
 const loader = new GLTFLoader().setPath('../models/PS4/');
 let consolps5;
 
+const loadingOverlay = document.getElementById('loading-overlay');
+
 loader.load('scene.gltf', (gltf) => {
     consolps5 = gltf.scene;
-    consolps5.position.set(0, 1, 0);
+    consolps5.position.set(0, 0, 0);
     consolps5.scale.set(1, 1, 1);
-    consolps5.rotation.y += 2;
+    consolps5.rotation.x += 0.01;
     scene.add(consolps5);
     console.log(consolps5);
+
+    // Sembunyikan animasi loading setelah objek 3D selesai dimuat
+    loadingOverlay.style.display = 'none';
 });
 
 const colorPickerButtons = document.querySelectorAll('.color-picker-button');

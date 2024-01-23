@@ -1,6 +1,7 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from '../node_modules/three/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from '../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+import { RGBELoader } from '../node_modules/three/examples/jsm/loaders/RGBELoader.js';
 
 const scene = new THREE.Scene();
 const cam = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1);
@@ -13,31 +14,36 @@ renderer.toneMappingExposure = 0.6;
 renderer.outputEncoding = THREE.sRGBEncoding;
 
 renderer.setSize(window.innerWidth, window.innerHeight);
-cam.position.x = 2;
-cam.position.y = 2;
+cam.position.x =2;
+cam.position.y =2;
 document.body.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(cam, renderer.domElement);
-controls.minDistance = 20; // Minimum distance for zoom
-controls.maxPolarAngle = Math.PI / 2;
 
-let consolps5;
 const loader = new GLTFLoader().setPath('../models/PS5/');
+let consolps5;
+
+const loadingOverlay = document.getElementById('loading-overlay');
 
 loader.load('scene.gltf', (gltf) => {
     consolps5 = gltf.scene;
     consolps5.position.set(0, 0, 0);
     consolps5.scale.set(1, 1, 1);
-    consolps5.rotation.x += 0;
+    consolps5.rotation.x += 0.01;
     scene.add(consolps5);
-
-    // Set initial maxDistance based on the bounding box of the loaded model
-    const boundingBox = new THREE.Box3().setFromObject(consolps5);
-    const modelSize = boundingBox.getSize(new THREE.Vector3()).length();
-    controls.maxDistance = modelSize * 2; // Adjust the multiplier as needed
-
     console.log(consolps5);
+
+    // Sembunyikan animasi loading setelah objek 3D selesai dimuat
+    loadingOverlay.style.display = 'none';
 });
+// loader.load('scene.gltf', (gltf) => {
+//     consolps5 = gltf.scene;
+//     consolps5.position.set(0, 0, 0);
+//     consolps5.scale.set(1, 1, 1);
+//     consolps5.rotation.x += 0;
+//     scene.add(consolps5);
+//     console.log(consolps5);
+// });
 
 const colorPickerButtons = document.querySelectorAll('.color-picker-button');
 

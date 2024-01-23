@@ -14,16 +14,20 @@ renderer.toneMappingExposure = 0.8;
 renderer.outputEncoding = THREE.sRGBEncoding;
 
 renderer.setSize(window.innerWidth, window.innerHeight);
-cam.position.x = 10;
-cam.position.y = 10;
-cam.position.z = 10;
+cam.position.x = 5;
+cam.position.y = 5;
+cam.position.z = 5;
 document.body.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(cam, renderer.domElement);
 
 const loader = new GLTFLoader().setPath('../models/iphone7/');
+let consolps;
+
+const loadingOverlay = document.getElementById('loading-overlay');
+
 loader.load('scene.gltf', (gltf) => {
-    const consolps = gltf.scene;
+    consolps = gltf.scene;
     consolps.position.set(0, 0, 0);
     consolps.scale.set(1, 1, 1);
     consolps.rotation.x += 5.01;
@@ -31,7 +35,22 @@ loader.load('scene.gltf', (gltf) => {
     consolps.rotation.z += 15;
     scene.add(consolps);
     console.log(consolps);
+
+    // Sembunyikan animasi loading setelah objek 3D selesai dimuat
+    loadingOverlay.style.display = 'none';
 });
+
+
+// loader.load('scene.gltf', (gltf) => {
+//     const consolps = gltf.scene;
+//     consolps.position.set(0, 0, 0);
+//     consolps.scale.set(1, 1, 1);
+//     consolps.rotation.x += 5.01;
+//     consolps.rotation.y += 0.01;
+//     consolps.rotation.z += 15;
+//     scene.add(consolps);
+//     console.log(consolps);
+// });
 
 // new RGBELoader()
 // .load("../images/studio_small_09_2k.hdr", function(texture){

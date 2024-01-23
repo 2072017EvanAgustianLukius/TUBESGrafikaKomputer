@@ -23,6 +23,8 @@ const controls = new OrbitControls(cam, renderer.domElement);
 const loader = new GLTFLoader().setPath('../models/iphone12_teardown/');
 let consolps5;
 
+const loadingOverlay = document.getElementById('loading-overlay');
+
 loader.load('scene.gltf', (gltf) => {
     consolps5 = gltf.scene;
     consolps5.position.set(0, 0, 0);
@@ -31,7 +33,19 @@ loader.load('scene.gltf', (gltf) => {
     consolps5.rotation.y += 1;
     scene.add(consolps5);
     console.log(consolps5);
+
+    // Sembunyikan animasi loading setelah objek 3D selesai dimuat
+    loadingOverlay.style.display = 'none';
 });
+// loader.load('scene.gltf', (gltf) => {
+//     consolps5 = gltf.scene;
+//     consolps5.position.set(0, 0, 0);
+//     consolps5.scale.set(12, 12, 12);
+//     consolps5.rotation.x += 0;
+//     consolps5.rotation.y += 1;
+//     scene.add(consolps5);
+//     console.log(consolps5);
+// });
 
 const colorPickerButtons = document.querySelectorAll('.color-picker-button');
 
