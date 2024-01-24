@@ -86,6 +86,29 @@
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
+    .sidebar-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer; 
+        }
+    .notification {
+            position: fixed;
+            top: 220px;
+            right: 500px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+            animation: fadeOut 2s ease-out;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
     </style>
 </head>
 <body>
@@ -108,9 +131,10 @@
             <a href="/index.html">
             <div class="sidebar-item">Kembali ke Home</div>
             </a>
-            <div class="sidebar-item">Keranjang</div>
+            <div class="sidebar-item" onclick="addToCart()">Keranjang</div>
         </div>
     </div>
+    <div class="notification" id="notification"></div>
     <script type="importmap">
         {
             "imports" : {
@@ -118,7 +142,17 @@
             }
         }
     </script>
-    <script type="module" src="iphone7.js">
+    <script type="module" src="iphone7.js"></script>
+    <script>
+        function addToCart() {
+
+        const notification = document.getElementById('notification');
+        notification.style.display = 'block';
+        notification.innerHTML = 'Barang sudah ditambahkan ke keranjang';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 2000);
+    }
     </script>
 </body>
 </html>

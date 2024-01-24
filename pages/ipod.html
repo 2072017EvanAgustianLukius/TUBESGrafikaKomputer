@@ -50,11 +50,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .sidebar-item {
-            border-bottom: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
+       
 
         .color-change-container {
             padding: 10px;
@@ -124,7 +120,30 @@
     @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
-    }
+    } 
+    .sidebar-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer; 
+        }
+    .notification {
+            position: fixed;
+            top: 260px;
+            right: 500px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+            animation: fadeOut 2s ease-out;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
     </style>
 </head>
 <body>
@@ -147,16 +166,19 @@
             <a href="/index.html">
                 <div class="sidebar-item">Kembali ke Home</div>
             </a>
-            <div class="sidebar-item">Keranjang</div>
+            <div class="sidebar-item" onclick="addToCart()">Keranjang</div>
         </div>
     </div>
+    <div class="notification" id="notification"></div>
     <div class="color-change-container">
         <div id="colorPicker" class="color-picker-button red" data-color="#ff0000" onclick="changeColor('#ff0000')"></div>
         <div id="colorPicker" class="color-picker-button blue" data-color="#0000ff" onclick="changeColor('#0000ff')"></div>
         <div id="colorPicker" class="color-picker-button green" data-color="#00ff00" onclick="changeColor('#00ff00')"></div>
         <div id="colorPicker" class="color-picker-button yellow" data-color="#ffff00" onclick="changeColor('#ffff00')"></div>
         <div id="colorPicker" class="color-picker-button purple" data-color="#800080" onclick="changeColor('#800080')"></div>
-    </div>    
+    </div>
+
+    
     <script type="importmap">
         {
             "imports" : {
@@ -165,5 +187,17 @@
         }
     </script>
     <script type="module" src="ipod.js"></script>
+    <script>
+        function addToCart() {
+
+        const notification = document.getElementById('notification');
+        notification.style.display = 'block';
+        notification.innerHTML = 'Barang sudah ditambahkan ke keranjang';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 2000);
+    }
+    </script>
+    
 </body>
 </html>
