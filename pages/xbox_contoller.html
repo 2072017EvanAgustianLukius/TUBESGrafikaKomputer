@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce 3D</title>
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+
+        .product-details {
+            flex-grow: 1;
+            display: flex;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-image {
+            width: 150px;
+            height: 150px;
+        }
+
+        .product-images {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .product-images img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product-description {
+            flex: 2;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    #loading-spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        border-top: 4px solid #3498db;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+    }
+
+    #loading-text {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    .sidebar-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer; 
+        }
+    .notification {
+            position: fixed;
+            top: 200px;
+            right: 500px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+            animation: fadeOut 2s ease-out;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-overlay">
+        <div id="loading-spinner"></div><br>
+        </div>
+    <div class="container">
+        <div class="product-details">
+            <div class="product-images">
+                <img src="../images/xboxc.jpg" alt="Product Image" class="product-image">
+            </div>
+            <div class="product-description">
+                <h2>Smart Watch</h2>
+                <h3><i>Rp 1.200.000</i></h3>
+                <p>Bawa kehidupan Anda ke level berikutnya dengan smartwatch kami. Desain yang mengagumkan, fitur yang cerdas, dan kenyamanan sepanjang hari untuk menemani setiap langkah Anda. </p>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <a href="/index.html">
+            <div class="sidebar-item">Kembali ke Home</div>
+            </a>
+            <div class="sidebar-item" onclick="addToCart()">Keranjang</div>
+        </div>
+    </div>
+    <div class="notification" id="notification"></div>
+    <script type="importmap">
+        {
+            "imports" : {
+                "three" : "../node_modules/three/build/three.module.js"
+            }
+        }
+    </script>
+    <script type="module" src="xbox_contoller.js"></script>
+     <script>
+        function addToCart() {
+
+        const notification = document.getElementById('notification');
+        notification.style.display = 'block';
+        notification.innerHTML = 'Barang sudah ditambahkan ke keranjang';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 2000);
+    }
+    </script>
+</body>
+</html>

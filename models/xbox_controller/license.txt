@@ -1,0 +1,11 @@
+Model Information:
+* title:	Xbox Wireless Controller 3D Scan Data
+* source:	https://sketchfab.com/3d-models/xbox-wireless-controller-3d-scan-data-a3279a520f2d4143863c118f50b23a2d
+* author:	Laser Design (https://sketchfab.com/Laserdesign)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Xbox Wireless Controller 3D Scan Data" (https://sketchfab.com/3d-models/xbox-wireless-controller-3d-scan-data-a3279a520f2d4143863c118f50b23a2d) by Laser Design (https://sketchfab.com/Laserdesign) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

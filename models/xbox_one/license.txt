@@ -1,0 +1,11 @@
+Model Information:
+* title:	Xbox One
+* source:	https://sketchfab.com/3d-models/xbox-one-0e8615570e174fc5a1855dba94e63cf0
+* author:	mohitpatel4078 (https://sketchfab.com/mohitpatel4078)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Xbox One" (https://sketchfab.com/3d-models/xbox-one-0e8615570e174fc5a1855dba94e63cf0) by mohitpatel4078 (https://sketchfab.com/mohitpatel4078) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
